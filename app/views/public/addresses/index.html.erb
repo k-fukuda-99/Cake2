@@ -1,0 +1,61 @@
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+
+<div class="container mt-5 mb-5">
+  <div class="row shipping-new">
+    <div class="col-sm-10 px-sm-0 offset-sm-1">
+      <h2>配送先登録/一覧</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 px-sm-0 mx-auto">
+      <%= form_with model: @shipping_address, local: true do |f| %>
+      <table>
+        <tr>
+        <div calss="form-group">
+          <th><%= f.label :"郵便番号(ハイフンなし)" %></th>
+          <td><%= f.text_field :shipping_postcode, placeholder:"0000000", id: "customer_postcode" %></td>
+        </div>
+        </tr>
+        <tr>
+        <div calss="form-group">
+          <th><%= f.label :"住所" %></th>
+          <td><%= f.text_field :shipping_address, placeholder:"住所を入力してください", :size => "50", id: "customer_address" %></td>
+        </div>
+        </tr>
+        <tr>
+        <div calss="form-group">
+          <th><%= f.label :"宛名" %></th>
+          <td><%= f.text_field :shipping_name, placeholder:"名前を入力してください"%></td>
+        　<td><%= f.submit "新規登録", class:"btn btn-success" %></td>
+        </div>
+        </tr>
+      </table>
+      <% end %>
+    </div>
+  </div>
+  <div class="row shipping-lists">
+    <div class="col-sm-10 px-sm-0 mx-auto">
+      <table class="table table-bordered">
+        <thead class="table-active">
+          <tr>
+            <th>郵便番号</th>
+            <th>住所</th>
+            <th>宛先</th></th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @shipping_addresses.each do |shipping_address| %>
+          <tr>
+            <td><%= shipping_address.shipping_postcode %></td>
+            <td><%= shipping_address.shipping_address %></td>
+            <td><%= shipping_address.shipping_name %></td>
+            <td><%= link_to "編集する", edit_shipping_address_path(shipping_address), class:"btn btn-success" %> <%= link_to "削除する", shipping_address, method: :delete, "data-confirm" => "本当に削除しますか？", class:"btn btn-danger" %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container mt-5 mb-5">
+	<div class="row text-center text-xs-center text-sm-left text-md-left ">
+    <div class="col-xs-12 col-sm-12 col-md-6 mx-auto text-right">
+     <%= image_tag @item.get_image, size:"180x130"%>
+     <%#= attachment_image_tag @item, :image, width: "60%", format: "jpeg", fallback: "no_image.jpeg", class:"lb" %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 item-details mx-auto">
+      <h2><strong><%= @item.name %></strong></h2>
+      <h4><%= simple_format(@item.introduction)%></h4>
+      <%  if @item.is_active == true %>
+        <p class="text-success">販売中</p>
+        <h3>¥ <%= change_price( @item.price) %> (税込)</h3>
+        <p><%= render "item_amount_form", cart_item: @cart_item, item: @item %></p>
+      <% else %>
+        <h3 class="text-danger">販売停止中です</h3>
+      <% end %>
+      </div>
+  </div>
+</div>

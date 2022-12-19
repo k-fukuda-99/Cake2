@@ -1,0 +1,16 @@
+<!-- ジャンル編集ページ WF7ページ目 -->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>ジャンル編集</h3>
+      <%= form_with model: @genre, url: admin_genre_path, class: "genre_edit_form", local:true do |f| %>
+        <table class ="table table-borderless">
+          <th><%= f.label :ジャンル名 %></th>
+          <th><%= f.text_field :name, class: "genre-edit-field" %></th>
+          <th><%= f.submit "変更を保存する", class: "btn btn-success" %></th>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
