@@ -3,12 +3,12 @@ class Address < ApplicationRecord
 
   belongs_to :customer
 
-  def shipping_postcode_and_address_and_name
-    "〒#{self.shipping_postcode}  #{self.shipping_address}  #{self.shipping_name}"
+  def postal_codecode_and_address_and_name
+    "〒#{self.postal_code}  #{self.address}  #{self.name}"
   end
 
-  validates :shipping_postcode, presence: true, format: { with: VALID_POSTCODE_REGEX }
-  validates :shipping_address, presence: true, length: { in: 1..48 }
-  validates :shipping_name, presence: true, length: { in: 1..32 }
+  validates :postal_code, presence: true, format: { with: VALID_POSTCODE_REGEX }
+  validates :address, presence: true, length: { in: 1..48 }
+  validates :name, presence: true, length: { in: 1..32 }
 
 end

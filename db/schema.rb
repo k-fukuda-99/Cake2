@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_18_043957) do
+ActiveRecord::Schema.define(version: 2022_12_20_021538) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -62,12 +62,9 @@ ActiveRecord::Schema.define(version: 2022_12_18_043957) do
   end
 
   create_table "cart_items", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description", null: false
-    t.integer "price_excluding_tax", null: false
-    t.string "image_id"
-    t.integer "genre_id", null: false
-    t.boolean "sales_status", default: true, null: false
+    t.integer "item_id", null: false
+    t.integer "customer_id", null: false
+    t.integer "amount", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

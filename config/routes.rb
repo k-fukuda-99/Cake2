@@ -10,15 +10,20 @@ devise_for :customers,skip: [:passwords], controllers: {
 scope module: :public do
   root to: "homes#top"
   get "/about" => "homes#about"
+
   resources :items, only: [:index, :show]
+
   resource :customers, only: [:show, :edit, :update]
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdraw" => "customers#withdraw"
-  resources :cart_items, only: [:index, :update, :destroy, :create]
+
   delete "/cart_items/destroy_all" => "cart_items#destroy_all"
-  resources :orders, only: [:new, :create, :show, :index]
+  resources :cart_items, only: [:index, :update, :destroy, :create]
+
   post "/orders/confirm" => "orders#confirm"
-  get "/orders/complete" => "orders#complete"
+  get "/orders/thanks" => "orders#thanks"
+  resources :orders, only: [:new, :create, :show, :index]
+
   resources :addresses, only: [:index, :edit, :create, :update, :destroy]
   get "/search" => "items#search"
 

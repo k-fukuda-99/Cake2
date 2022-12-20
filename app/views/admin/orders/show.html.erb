@@ -12,9 +12,9 @@
         <tr><th class="table-active" style="width:20%"><%= f.label :order_status, "注文ステータス" %></th>
           <td>
             <% if @order.発送準備中? || @order.発送済み?  %>
-            <%= f.select :order_status,Order.order_statuses.keys %>
+            <%= f.select :order_status,Order.order_status.keys %>
             <% else %>
-            <%= f.select :order_status,Order.order_statuses.keys, {disabled: ["発送準備中","発送済み"]} %>
+            <%= f.select :order_status,Order.order_status.keys, {disabled: ["発送準備中","発送済み"]} %>
             <% end %>
             <%= f.submit "更新", class: "btn btn-success" %>
           </td>

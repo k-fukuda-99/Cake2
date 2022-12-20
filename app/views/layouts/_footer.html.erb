@@ -1,0 +1,57 @@
+<footer>
+  <div class="bg-dark nav-link text-light">
+    <div class="container">
+      <div class="row text-center text-xs-center text-sm-left text-md-left ">
+  	    <div class="col-xs-12 col-sm-8 col-md-3">
+  	  	  <h6><strong>メールマガジン登録</strong></h6>
+  	  	  <form>
+		        <input type="email" class="mail-box" placeholder="メールアドレスを入力"><br>
+		        <input type="submit" class="btn mail-magazine text-light" value="登録する">
+		      </form>
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <h6>ONLINE STORE</h6>
+          <div class="row">
+            <div class="col-6">
+              <ul class="list-unstyled quick-links">
+			          <li><%= link_to "TOP", root_path, class: 'nav-link text-light' %></li>
+			          <li><%= link_to "マイページ", customers_path, class: 'nav-link text-light' %></li>
+			          <li><%= link_to "商品一覧", items_path, class: 'nav-link text-light' %></li>
+			          <li><%= link_to "特定商取引法に基づく表記", root_path, class: 'nav-link text-light' %></li>
+			          <li><%= link_to "プライバシーポリシー", root_path, class: 'nav-link text-light' %></li>
+			        </ul>
+		        </div>
+            <div class="col-6">
+              <ul class="list-unstyled quick-links">
+           	    <li><%= link_to "ご利用ガイド", root_path, class: 'nav-link text-light' %></li>
+           	    <div class="footer-lists">
+           	      <li><%= link_to "お支払いについて", root_path, class: 'nav-link text-light' %></li>
+           	      <li><%= link_to "配送について", root_path, class: 'nav-link text-light' %></li>
+           	      <li><%= link_to "よくある質問", root_path, class: 'nav-link text-light' %></li>
+           	    </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-3">
+	        <h6>ABOUT</h6>
+      	    <ul class="list-unstyled quick-links">
+	            <li><%= link_to "NAGANO CAKEについて", about_path, class: 'nav-link text-light' %></li>
+	            <li><%= link_to "会社概要", root_path, class: 'nav-link text-light' %></li>
+	            <li><%= link_to "メディア・プレス", root_path, class: 'nav-link text-light' %></li>
+	            <li><%= link_to "スタッフ募集", root_path, class: 'nav-link text-light' %></li>
+	            <li><%= link_to "お問い合わせ", root_path, class: 'nav-link text-light' %></li>
+	          </ul>
+   	    </div>
+	    </div>
+
+	   <div class="row">
+	     <div class="col text-center">
+	       <p>© 2022,NAGANO CAKE, © 2022 Team KaitenSushi Japan</p>
+	     </div>
+	   </div>
+	  </div>
+  </div>
+</footer>

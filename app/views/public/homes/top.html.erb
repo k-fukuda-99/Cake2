@@ -4,6 +4,7 @@
       <%= render 'admin/genres/genre_sidebar', genres: @genres  %>
     </div>
 
+
     <div class="col-md-9">
       <div class="top-box">
         <p class="top-text">
@@ -17,11 +18,15 @@
       <div class="recommend-title">
         <h3>新着商品</h3>
       </div>
-      <div class="recommend-container">
+      <div class="row">
         <% @random.each do |item| %>
-          <div class="recommend-item">
-            <%= link_to item_path(item) %>
-            <%= image_tag item.image, size:"180x130" %><br>
+          <div class="col-md-3">
+            <%= item.name  %>
+            <div class="img_field">
+            <%= link_to item_path(item) do %>
+            <%= image_tag item.image, size:"180x130" %>
+            <% end %>
+            </div>
             <p><%= item.name %></p>
             <p>¥<%= (item.price*1.1).floor.to_s(:delimited)%>(税込)</p>
           </div>

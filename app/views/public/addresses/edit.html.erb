@@ -6,24 +6,24 @@
   </div>
   <div class="row">
     <div class="col-sm-10 px-sm-0 mx-auto">
-      <%= form_with model: @shipping_address, local: true do |f| %>
+      <%= form_with model: @address, local: true do |f| %>
       <table>
         <tr>
           <div calss="form-group">
             <th><%= f.label :"郵便番号(ハイフンなし)" %></th>
-            <th><%= f.text_field :shipping_postcode, placeholder:"0000000" %></th>
+            <th><%= f.text_field :postal_code, placeholder:"0000000" %></th>
           </div>
         </tr>
         <tr>
           <div calss="form-group">
             <th><%= f.label :"住所" %></th>
-            <th><%= f.text_field :shipping_address, placeholder:"住所を入力してください", :size => "50" %></th>
+            <th><%= f.text_field :address, placeholder:"住所を入力してください", :size => "50" %></th>
           </div>
         </tr>
         <tr>
           <div calss="form-group">
             <th><%= f.label :"宛名" %></th>
-            <th><%= f.text_field :shipping_name, placeholder:"名前を入力してください", :size => "30"%></th>
+            <th><%= f.text_field :name, placeholder:"名前を入力してください", :size => "30"%></th>
           　<th class="ml-5"><%= f.submit "変更内容を保存", class:"btn btn-success" %></th>
           </div>
         </tr>
